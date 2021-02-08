@@ -1,7 +1,8 @@
 const express = require('express');
 const moviedb = require('./moviedb');
 
-let port = Number(process.env.HTTP_PORT);
+let portVar = process.env.HTTP_PORT || process.env.PORT;
+let port = Number(portVar);
 if (isNaN(port)) port = 8080;
 
 const app = express();
